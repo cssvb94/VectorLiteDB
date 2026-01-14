@@ -60,7 +60,29 @@ var advancedResults = store.Search(new SearchRequest
 
 ## 📚 Documentation
 
-For complete API documentation, see [VectorLiteDB_API_Documentation.md](VectorLiteDB_API_Documentation.md).
+- **Complete API Documentation**: [VectorLiteDB_API_Documentation.md](VectorLiteDB_API_Documentation.md)
+- **MCP Server Integration Guide**: See repository knowledge base for comprehensive MCP server implementation examples, production deployment patterns, and testing strategies.
+
+## 🤖 MCP Server Integration
+
+VectorLiteDB provides comprehensive MCP (Model Context Protocol) server integration for AI agents:
+
+### MCP Tools Available
+- **`store_knowledge`**: Store knowledge entries with automatic embedding generation
+- **`search_knowledge`**: Semantic search with advanced filtering and relation traversal
+- **`add_relationship`**: Create bidirectional relationships between knowledge entries
+- **`get_statistics`**: Database performance and usage metrics
+- **`rebuild_index`**: Optimize search performance through index rebuild
+
+### Quick MCP Setup
+```csharp
+// MCP server with VectorLiteDB
+var knowledgeTool = new KnowledgeTool("mcp_knowledge.db");
+var server = new MCPKnowledgeServer(knowledgeTool);
+await server.StartAsync();
+```
+
+**For complete MCP server implementation, deployment patterns, and testing strategies, see the repository's knowledge base documentation.**
 
 ## 🏗️ Core API
 
@@ -175,7 +197,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- 📚 **Documentation**: [VectorLiteDB_API_Documentation.md](VectorLiteDB_API_Documentation.md)
+- 📚 **API Documentation**: [VectorLiteDB_API_Documentation.md](VectorLiteDB_API_Documentation.md)
+- 🤖 **MCP Integration**: Repository knowledge base contains comprehensive MCP server implementation guides, production deployment patterns, and testing strategies
 - 🐛 **Issues**: [GitHub Issues](https://github.com/cssvb94/VectorLiteDB/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/cssvb94/VectorLiteDB/discussions)
 
