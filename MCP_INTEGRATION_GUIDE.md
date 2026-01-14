@@ -918,7 +918,7 @@ RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from/publish /app/publish .
 ENTRYPOINT ["dotnet", "MCPKnowledgeServer.dll"]
 ```
 
@@ -981,5 +981,4 @@ public class LambdaMCPHandler
 }
 ```
 
-This comprehensive guide provides everything needed to integrate VectorLiteDB into MCP servers for AI agent knowledge management.</content>
-<parameter name="filePath">MCP_INTEGRATION_GUIDE.md
+This comprehensive guide provides everything needed to integrate VectorLiteDB into MCP servers for AI agent knowledge management.
