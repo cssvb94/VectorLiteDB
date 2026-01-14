@@ -65,98 +65,14 @@ var advancedResults = store.Search(new SearchRequest
 
 ## 🤖 MCP Server Integration
 
-VectorLiteDB provides comprehensive MCP (Model Context Protocol) server integration for AI agents:
+VectorLiteDB provides comprehensive MCP (Model Context Protocol) server integration for AI agents with 5 specialized tools for knowledge management.
 
-### MCP Tools Available
+### Available MCP Tools
 - **`store_knowledge`**: Store knowledge entries with automatic embedding generation
 - **`search_knowledge`**: Semantic search with advanced filtering and relation traversal
 - **`add_relationship`**: Create bidirectional relationships between knowledge entries
 - **`get_statistics`**: Database performance and usage metrics
 - **`rebuild_index`**: Optimize search performance through index rebuild
-
-### MCP Tools Examples
-
-#### Store Knowledge
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "tools/call",
-  "params": {
-    "name": "store_knowledge",
-    "arguments": {
-      "content": "Neural networks are computing systems inspired by biological brains",
-      "tags": ["AI", "neural-networks", "deep-learning"],
-      "metadata": {
-        "category": "technical",
-        "difficulty": "intermediate"
-      }
-    }
-  }
-}
-```
-
-#### Semantic Search
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 2,
-  "method": "tools/call",
-  "params": {
-    "name": "search_knowledge",
-    "arguments": {
-      "query": "artificial intelligence machine learning",
-      "k": 5,
-      "traversalDepth": 1,
-      "tagPrefixes": ["AI"]
-    }
-  }
-}
-```
-
-#### Add Relationship
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 3,
-  "method": "tools/call",
-  "params": {
-    "name": "add_relationship",
-    "arguments": {
-      "sourceId": "550e8400-e29b-41d4-a716-446655440000",
-      "targetId": "550e8400-e29b-41d4-a716-446655440001",
-      "weight": 1.5,
-      "type": "prerequisite"
-    }
-  }
-}
-```
-
-#### Get Statistics
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 4,
-  "method": "tools/call",
-  "params": {
-    "name": "get_statistics",
-    "arguments": {}
-  }
-}
-```
-
-#### Rebuild Index
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 5,
-  "method": "tools/call",
-  "params": {
-    "name": "rebuild_index",
-    "arguments": {}
-  }
-}
-```
 
 ### Quick MCP Setup
 ```csharp
@@ -166,7 +82,7 @@ var server = new MCPKnowledgeServer(knowledgeTool);
 await server.StartAsync();
 ```
 
-**For complete MCP server implementation, deployment patterns, and testing strategies, see the repository's knowledge base documentation.**
+**📖 Complete MCP Integration Guide**: See [MCP_INTEGRATION_GUIDE.md](MCP_INTEGRATION_GUIDE.md) for comprehensive implementation details, JSON-RPC examples, server setup, testing strategies, and production deployment patterns.
 
 ## 🏗️ Core API
 
