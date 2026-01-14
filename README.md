@@ -74,6 +74,90 @@ VectorLiteDB provides comprehensive MCP (Model Context Protocol) server integrat
 - **`get_statistics`**: Database performance and usage metrics
 - **`rebuild_index`**: Optimize search performance through index rebuild
 
+### MCP Tools Examples
+
+#### Store Knowledge
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "store_knowledge",
+    "arguments": {
+      "content": "Neural networks are computing systems inspired by biological brains",
+      "tags": ["AI", "neural-networks", "deep-learning"],
+      "metadata": {
+        "category": "technical",
+        "difficulty": "intermediate"
+      }
+    }
+  }
+}
+```
+
+#### Semantic Search
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "method": "tools/call",
+  "params": {
+    "name": "search_knowledge",
+    "arguments": {
+      "query": "artificial intelligence machine learning",
+      "k": 5,
+      "traversalDepth": 1,
+      "tagPrefixes": ["AI"]
+    }
+  }
+}
+```
+
+#### Add Relationship
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "method": "tools/call",
+  "params": {
+    "name": "add_relationship",
+    "arguments": {
+      "sourceId": "550e8400-e29b-41d4-a716-446655440000",
+      "targetId": "550e8400-e29b-41d4-a716-446655440001",
+      "weight": 1.5,
+      "type": "prerequisite"
+    }
+  }
+}
+```
+
+#### Get Statistics
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 4,
+  "method": "tools/call",
+  "params": {
+    "name": "get_statistics",
+    "arguments": {}
+  }
+}
+```
+
+#### Rebuild Index
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 5,
+  "method": "tools/call",
+  "params": {
+    "name": "rebuild_index",
+    "arguments": {}
+  }
+}
+```
+
 ### Quick MCP Setup
 ```csharp
 // MCP server with VectorLiteDB
